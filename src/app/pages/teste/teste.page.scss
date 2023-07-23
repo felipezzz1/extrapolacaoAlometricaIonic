@@ -1,0 +1,26 @@
+ion-content {
+    font-size: 16px;
+}
+
+ion-list-header {
+    background-color: rgba(13, 196, 67, 0.836);
+    text-align: center;
+}
+
+ion-input{
+    margin-left: 1.17em;
+}
+
+#insert {
+    --placeholder-color: red;
+    --placeholder-opacity: 1;
+}
+
+ion-select {
+    --placeholder-color: red;
+    --placeholder-opacity: 1;
+}
+
+ion-select::part(text) {
+    color: black;
+}

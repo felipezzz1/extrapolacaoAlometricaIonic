@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Extrapolação Alometrica
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+        <ion-list-header>Paciente</ion-list-header>
+        <ion-select [(ngModel)]="kAnimalAlvo" interface="action-sheet" placeholder="Selecione a k Constante do Alvo">
+            <ion-select-option value=129>Passeriformes e beija-flor (129)</ion-select-option>
+            <ion-select-option value=78>Não passeriformes(78)</ion-select-option>
+            <ion-select-option value=79>Não passeriformes(79)</ion-select-option>
+            <ion-select-option value=70>Placentários(70)</ion-select-option>
+            <ion-select-option value=49>Marsupiais e xenathra(49)</ion-select-option>
+            <ion-select-option value=10>Reptéis(10)</ion-select-option>
+        </ion-select>
+
+        <!-- Input with placeholder for peso animal alvo -->
+        <ion-input id="insert" placeholder="Insira o Peso do animal alvo" [(ngModel)]="pesoAnimalAlvo" type="number"></ion-input>
+
+        <ion-list-header>Modelo</ion-list-header>
+        <ion-select [(ngModel)]="kAnimalModelo" interface="action-sheet" placeholder="Selecione a k Constante do Modelo">
+            <ion-select-option value=129>Passeriformes e beija-flor (129)</ion-select-option>
+            <ion-select-option value=78>Não passeriformes(78)</ion-select-option>
+            <ion-select-option value=79>Não passeriformes(79)</ion-select-option>
+            <ion-select-option value=70>Placentários(70)</ion-select-option>
+            <ion-select-option value=49>Marsupiais e xenathra(49)</ion-select-option>
+            <ion-select-option value=10>Reptéis(10)</ion-select-option>
+        </ion-select>
+
+        <!-- Input with placeholder for peso animal modelo -->
+        <ion-input id="insert" placeholder="Insira o Peso animal modelo" [(ngModel)]="pesoAnimalModelo" type="number"></ion-input>
+
+        <ion-button expand="block" color="primary" (click)="calcularTaxaMetabolica()">Calcular</ion-button>
+
+        <ion-label>TMB Alvo: </ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="resultadoTMBAlvo"></ion-input>
+
+        <ion-label>TMB Modelo: </ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="resultadoTMBModelo"></ion-input>
+
+        <ion-label>TME Alvo: </ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="resultadoTMEAlvo"></ion-input>
+
+        <ion-label>TME Modelo: </ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="resultadoTMEModelo"></ion-input>
+
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header>Medicamento</ion-list-header>
+        <ion-label>Dose</ion-label>
+        <ion-input id="insert" placeholder="Insira Dose Mg/Kg" [(ngModel)]="dose" type="number"></ion-input>
+
+        <ion-label>Dose Total Modelo Mg/kg:</ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="doseTotalModelo"></ion-input>
+
+        <ion-label>Dose Total Alvo Mg/kg:</ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="doseTotalAlvo"></ion-input>
+
+        <ion-list-header>Intervalo</ion-list-header>
+
+        <ion-label>Intervalo Horas Modelo:</ion-label>
+        <ion-input id="insert" placeholder="Insira Intervalo Hrs Modelo" [(ngModel)]="intervaloHorasModelo" type="number"></ion-input>
+
+        <ion-label>Intervalo Horas Alvo:</ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="intervaloHorasAlvo"></ion-input>
+
+        <ion-label>Intervalo Dias:</ion-label>
+        <ion-input value="readonly" readonly [(ngModel)]="intervaloDias"></ion-input>
+    </ion-list>
+
+    <ion-button expand="block" color="primary" (click)="calcularMedicamentos()">Calcular</ion-button>
+</ion-content>

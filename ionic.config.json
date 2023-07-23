@@ -1,0 +1,7 @@
+{
+  "name": "Extrapolação Alométrica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

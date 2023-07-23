@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Tabela e legendas</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Legendas</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label id="TM">TME</ion-label>
+            <ion-label>Taxa Metabólica Específica</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label id="TM">TMB</ion-label>
+            <ion-label>Taxa Metabólica Basal</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header></ion-list-header>
+        <ion-item>
+            <ion-label>Tabela K Constante</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tipo</ion-label>
+            <ion-label>Valor K Constante</ion-label>
+        </ion-item>
+        <ion-item *ngFor="let animal of animais">
+            <ion-label>{{animal.tipo}}</ion-label>
+            <ion-label>{{animal.kConstante}}</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header></ion-list-header>
+        <ion-item>
+            <ion-label>Tabela Pesos</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Animal Modelo</ion-label>
+            <ion-label>Massa Corporal(Kg)</ion-label>
+        </ion-item>
+        <ion-item *ngFor="let animal of animaisMod">
+            <ion-label>{{animal.modelo}}</ion-label>
+            <ion-label>{{animal.peso}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
